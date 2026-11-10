@@ -5,9 +5,18 @@
 #include <functional>
 #include <vector>
 
+extern "C" void app_main(void)
+{
+  initArduino();
+  setup();
+  while (true) {
+    loop();
+  }
+}
+
 // Constants
 #define VERSION "0.0.1"
-int matrX = 7; // Zero counts as first coordinate,
+static int matrX = 7; // Zero counts as first coordinate,
 int matrY = 3; // so 4x8 is denoted by x=7 and y=3
 constexpr int fixedLengthBinary = 4;
 int cols = 20;
